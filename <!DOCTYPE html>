@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <header>
+    </header>
+    <body>
+
+        <script type="text/javascript">
+            
+            var trib_atual = document.getElementById("trib_atual");
+            var anexo_simples = document.getElementById("anexo_simples");
+            var ramo = document.getElementById("ramo");
+            
+            var fat_mensal = document.getElementById("fat_mensal").value;
+            var fat_12m = ("fat_12m"*12);
+            
+            var custos_merc = document.getElementById("custos_merc").value;
+            var custos_adm = document.getElementById("custos_adm").value;
+            var custos_clt = document.getElementById("custos_clt").value;
+            var custos_mkt = document.getElementById("custos_mkt").value;
+            var custos_mensais = parseInt(custos_merc) + parseInt(custos_adm) + parseInt(custos_clt) + parseInt(custos_mkt);
+            
+            var lucro_liquido = parseInt(fat_mensal) - parseInt(custos_mensais);
+            var lucro_real = parseInt(lucro_liquido) * 12;
+            
+            
+            var c1_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe1_outros)) / 12;
+            var c2_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe2_outros)) / 12;
+            var c3_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe3_outros)) / 12;
+            var c4_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe4_outros)) / 12;
+            var c5_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe5_outros)) / 12;
+            
+
+            function calculo_ir(){
+            if (lucro_presumido > 240000){
+            var ir = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;
+            } else {
+            var ir = parseInt(lucro_presumido) * 0.15;
+            }
+            }
+
+
+            function calculo_ircs(){
+            if (lucro_real > 240000) {var lucro_real = parseInt(lucro_real) - 240000 * 0.1}
+                else var lucro_real = 0 }{
+            
+            var ircs = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;
+            } else {
+            var ircs = parseInt(lucro_presumido) * 0.15;
+            }
+            
+
+
+            /* IF ( ((U29*0,15)+ IF(U29>240000;(U29-240000)*0,1 ;0))   +U29*0,09<0;0;  ((U29*0,15)+IF(U29>240000;(U29-240000)*0,1;0))  +   U29*0,09) */
+
+
+            function calculo_piscofins(){
+            if ((((parseInt(fat_mensal) * 0.0925)) - (parseInt(custos_merc) - parseInt(custos_mkt)) * 0.0925) * 12) < 0 = 0 {
+            var piscofins = 0;
+            } else {
+            var piscofins = (((parseInt(fat_mensal) * 0.0925)) - (parseInt(custos_merc) - parseInt(custos_mkt)) * 0.0925) * 12;
+            }
+            }
+
+
+           
+            //simples nacional
+
+           function faixa_simples(){
+            if (trib_atual == "i" && fat_12m =< "180000" {
+                var faixa
+            }}
+
+           function calculo_simples(){
+            if (trib_atual == "i" && faixa){
+                var 
+            }}
+            
+            //lucro presumido
+          
+           function classe1_calculolp(){
+            var c1asse1_lucro_presumido = 0.08 * parseInt(fat_12m);
+            var classe1_ir = calculo_ir();
+            var classe1_lucro_presumido_csll = 0.08 * parseInt(fat_12m);
+            var classe1_unk = parseInt(classe1_lucro_presumido_csll) * 0.09;
+            var classe1_outros = parseInt(fat_12m) * (0.18 + 0.0365);
+            var classe1_clt = parseInt(custos_clt) * 12 * 0.358;
+            var classe1_total_presumido = parseInt(classe1_ir) + parseInt(classe1_unk) + parseInt(classe1_outros) + parseInt(classe1_clt);
+            
+            var classe1_aliq_presumido = parseInt(classe1_total_presumido) / parseInt(fat_12m);
+          
+            
+            function classe2_calculolp(){
+            var c1asse2_lucro_presumido = 0.32 * parseInt(fat_12m);
+            var classe2_ir = calculo_ir();
+            var classe2_lucro_presumido_csll = 0.32 * parseInt(fat_12m);
+            var classe2_unk = parseInt(classe2_lucro_presumido_csll) * 0.09;
+            var classe2_outros = parseInt(fat_12m) * (0.05 + 0.0365);
+            var classe2_clt = parseInt(custos_clt) * 12 * 0.358;
+            var classe2_total_presumido = parseInt(classe2_ir) + parseInt(classe2_unk) + parseInt(classe2_outros) + parseInt(classe2_clt);
+            
+            var classe2_aliq_presumido = parseInt(classe2_total_presumido) / parseInt(fat_12m);
+
+            function classe3_calculolp(){
+            var c1asse3_lucro_presumido = 0.016 * parseInt(fat_12m);
+            var classe3_ir = calculo_ir();
+            var classe3_lucro_presumido_csll = 0.016 * parseInt(fat_12m);
+            var classe3_unk = parseInt(classe3_lucro_presumido_csll) * 0.09;
+            var classe3_outros = 0;
+            var classe3_clt = parseInt(custos_clt) * 12 * 0.358;
+            var classe3_total_presumido = parseInt(classe3_ir) + parseInt(classe3_unk) + parseInt(classe3_outros) + parseInt(classe3_clt);
+            
+            var classe3_aliq_presumido = parseInt(classe3_total_presumido) / parseInt(fat_12m);
+
+            function classe4_calculolp(){
+            var c1asse4_lucro_presumido = 0.08 * parseInt(fat_12m);
+            var classe4_ir = calculo_ir();
+            var classe4_lucro_presumido_csll = 0.12 * parseInt(fat_12m);
+            var classe4_unk = parseInt(classe4_lucro_presumido_csll) * 0.09;
+            var classe4_outros = parseInt(fat_12m) * (0.05 + 0.0365);
+            var classe4_clt = parseInt(custos_clt) * 12 * 0.358;
+            var classe4_total_presumido = parseInt(classe4_ir) + parseInt(classe4_unk) + parseInt(classe4_outros) + parseInt(classe4_clt);
+            
+            var classe4_aliq_presumido = parseInt(classe4_total_presumido) / parseInt(fat_12m);
+
+            function classe5_calculolp(){
+            var c1asse5_lucro_presumido = 0.16 * parseInt(fat_12m);
+            var classe5_ir = calculo_ir();
+            var classe5_lucro_presumido_csll = 0.16 * parseInt(fat_12m);
+            var classe5_unk = parseInt(classe5_lucro_presumido_csll) * 0.09;
+            var classe5_outros = parseInt(fat_12m) * (0.18 + 0.0365);
+            var classe5_clt = parseInt(custos_clt) * 12 * 0.358;
+            var classe5_total_presumido = parseInt(classe5_ir) + parseInt(classe5_unk) + parseInt(classe5_outros) + parseInt(classe5_clt);
+            
+            var classe5_aliq_presumido = parseInt(classe5_total_presumido) / parseInt(fat_12m);
+
+
+
+            //lucro real
+
+            function classe1_calculolr(){
+            var c1asse1_lucro_real = parseInt(lucro_liquido) * 12;
+            var classe1_ircs = ircs;
+            var classe1_piscofins = piscofins;
+            var classe1_outros = parseInt(fat_12m) * 0.18;
+            var classe1_total_real = parseInt(classe1_ircs) + parseInt(classe1_piscofins) + parseInt(classe1_outros) + parseInt(classe1_clt);
+            var classe1_aliq_total =  parseInt(classe1_total_real) / parseInt(fat_12m);
+
+
+            }
+
+
+
+           
+            function opcao_trib(){
+ if(document.getElementById("trib_atual").value == ""){
+ alert("Selecione uma opção");
+ }
+ if(document.getElementById("trib_atual").value == "1a")
+ {
+ calculo_simples();
+ }
+ }
+ if(document.getElementById("trib_atual").value == "1b" && ((document.getElementById("ramo") == "at_imob") || (document.getElementById("ramo") == "com") || (document.getElementById("ramo") == "ind_terc") || (document.getElementById("ramo") == "transp_cargo"))); {classe1_calculolp()};
+
+ else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolp()};
+    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "rev_comb")); {classe3_calculolp()};
+    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "serv_hosp")); {classe4_calculolp()};
+    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "transp")); {classe5_calculolp()};
+ }
+
+ }
+ }
+ if(document.getElementById("trib_atual").value == "1c") && ((document.getElementById("ramo") == "at_imob") || (document.getElementById("ramo") == "com") || (document.getElementById("ramo") == "ind_terc") || (document.getElementById("ramo") == "transp_cargo")); {classe1_calculolr()};
+
+ else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolr()};
+    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "rev_comb")); {classe3_calculolr()};
+    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "serv_hosp")); {classe4_calculolr()};
+    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "transp")); {classe5_calculolr()};
+ }
+
+
+ 
+            
+            
+            
+            
+
+        </script>
+            <p id="one"></p>
+
+        <h1>Calculadora de tributos</h1>
+
+            <form id="form">
+                Nome: <input id="nome" type="text" size="15"/> <br/>
+                WhatsApp: <input id="whatsapp" type="text" size="15"/> <br/><br/>
+                CNPJ: <input id="cnpj" type="text" size="15"/> <br/>
+                CNAE: <input id="cnae" type="text" size="15"/> <br/><br/>
+                
+                Tributação atual: <select id="trib_atual" onblur="opcao_trib()">
+                <option id="valor" value=""> </option>
+                <option id="valor" value="1a">Simples Nacional</option>
+                <option id="valor" value="1b">Lucro Presumido</option>
+                <option id="valor" value="1c">Lucro Real</option>
+                </select> <br/>
+               
+                Anexo Simples Nacional: <select id="cat_simples" onblur="opcao_simples()">
+                <option id="valor" value=""> </option>
+                <option id="valor" value="i">I</option>
+                <option id="valor" value="ii">II</option>
+                <option id="valor" value="iii">III</option>
+                <option id="valor" value="iv">IV</option>
+                <option id="valor" value="v">V</option>
+                </select> <br/>
+                
+                Ramo de atividade: <select id="ramo" onblur="opcao()">
+                <option id="valor" value=""> </option>
+                <option id="valor" value="at_imob">Atividades imobiliárias</option>
+                <option id="valor" value="com">Comércio</option>
+                <option id="valor" value="ind_terc">Indústria para terceiros</option>
+                <option id="valor" value="prest_serv">Prestação de serviços</option>
+                <option id="valor" value="rev_comb">Revenda de combustíveis e gás natural</option>
+                <option id="valor" value="serv_hosp">Serviços hospitalares</option>
+                <option id="valor" value="transp">Transporte (exceto cargas)</option>
+                <option id="valor" value="transp_cargo">Transporte de cargas</option>
+                </select> <br/> <br/>
+                
+                Faturamento do mês: <input id="fat_mensal" type="text" size="15"/> <br/><br/>
+               
+                Custos com mercadorias/serviços prestados: <input id="custos_merc" type="text" size="15"/> <br/>
+               
+               
+                Despesas gerais: <input id="custos_adm" type="text" size="15"/> <br/>
+                Folha mensal (CLT): <input id="custos_clt" type="text" size="15"/> <br/>
+                Despesas com marketing: <input id="custos_mkt" type="text" size="15"/> <br/>
+                <br/>
+                
+                
+            
+                <input id="calcular" type="button" value="Calcular" onclick="opcao()"/>
+                <input id="limpar" type="reset" value="Resetar"/> <br/> <br/>
+                
+                Resultado: <input id="resultado" type="text" size="15" disabled="true"/>
+
+         </form>
+
+
+    </body>
+</html>
