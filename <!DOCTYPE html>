@@ -416,8 +416,7 @@
     var resultado = "pessimo";
     else var resultado = "meh";
 }
-    // falta arrumar aqui
-
+ 
  }
     function resultado_final(){
         if resultado = "otimo";
@@ -483,7 +482,7 @@
                 
                 
             
-                <input id="calcular" type="button" value="Calcular" onclick="opcao()"/>
+                <input id="calcular" type="button" value="Calcular" onclick="resultado_final()"/>
                 <input id="limpar" type="reset" value="Resetar"/> <br/> <br/>
                 
                 Resultado: <input id="resultado_final" type="text" size="15" disabled="true"/>
