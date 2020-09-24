@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
     <header>
-    </header>
-    <body>
-
-        <script type="text/javascript">
+<script type="text/javascript">
             
             var trib_atual = document.getElementById("trib_atual");
             var anexo_simples = document.getElementById("anexo_simples");
@@ -432,6 +429,10 @@
             
 
         </script>
+        
+    </header>
+    <body>
+
             <p id="one"></p>
 
         <h1>Calculadora de tributos</h1>
