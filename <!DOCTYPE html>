@@ -50,8 +50,6 @@
             
 
 
-            /* IF ( ((U29*0,15)+ IF(U29>240000;(U29-240000)*0,1 ;0))   +U29*0,09<0;0;  ((U29*0,15)+IF(U29>240000;(U29-240000)*0,1;0))  +   U29*0,09) */
-
 
             function calculo_piscofins(){
             if ((((parseInt(fat_mensal) * 0.0925)) - (parseInt(custos_merc) - parseInt(custos_mkt)) * 0.0925) * 12) < 0 = 0 {
@@ -242,10 +240,7 @@
                 var classe = "classe5";
             }
 
-            function calculo_lp(){
-                if classe == "classe1";
                 
-
             }
 
            function classe1_calculolp(){
@@ -256,9 +251,10 @@
             var classe1_outros = parseInt(fat_12m) * (0.18 + 0.0365);
             var classe1_clt = parseInt(custos_clt) * 12 * 0.358;
             var classe1_total_presumido = parseInt(classe1_ir) + parseInt(classe1_unk) + parseInt(classe1_outros) + parseInt(classe1_clt);
-            
-            var classe1_aliq_presumido = parseInt(classe1_total_presumido) / parseInt(fat_12m);
-          
+
+            if (ramo == "classe1");
+            var aliq_presumido = parseInt(classe1_total_presumido) / parseInt(fat_12m);
+          }
             
             function classe2_calculolp(){
             var c1asse2_lucro_presumido = 0.32 * parseInt(fat_12m);
@@ -269,7 +265,8 @@
             var classe2_clt = parseInt(custos_clt) * 12 * 0.358;
             var classe2_total_presumido = parseInt(classe2_ir) + parseInt(classe2_unk) + parseInt(classe2_outros) + parseInt(classe2_clt);
             
-            var classe2_aliq_presumido = parseInt(classe2_total_presumido) / parseInt(fat_12m);
+            if (ramo == "classe2");
+            var aliq_presumido = parseInt(classe2_total_presumido) / parseInt(fat_12m);
             }
 
             function classe3_calculolp(){
@@ -281,7 +278,8 @@
             var classe3_clt = parseInt(custos_clt) * 12 * 0.358;
             var classe3_total_presumido = parseInt(classe3_ir) + parseInt(classe3_unk) + parseInt(classe3_outros) + parseInt(classe3_clt);
             
-            var classe3_aliq_presumido = parseInt(classe3_total_presumido) / parseInt(fat_12m);
+            if (ramo == "classe3");
+            var aliq_presumido = parseInt(classe3_total_presumido) / parseInt(fat_12m);
             }
 
             function classe4_calculolp(){
@@ -293,7 +291,8 @@
             var classe4_clt = parseInt(custos_clt) * 12 * 0.358;
             var classe4_total_presumido = parseInt(classe4_ir) + parseInt(classe4_unk) + parseInt(classe4_outros) + parseInt(classe4_clt);
             
-            var classe4_aliq_presumido = parseInt(classe4_total_presumido) / parseInt(fat_12m);
+            if (ramo == "classe4");
+            var aliq_presumido = parseInt(classe4_total_presumido) / parseInt(fat_12m);
             }
 
             function classe5_calculolp(){
@@ -305,11 +304,14 @@
             var classe5_clt = parseInt(custos_clt) * 12 * 0.358;
             var classe5_total_presumido = parseInt(classe5_ir) + parseInt(classe5_unk) + parseInt(classe5_outros) + parseInt(classe5_clt);
             
-            var classe5_aliq_presumido = parseInt(classe5_total_presumido) / parseInt(fat_12m);
+            if (ramo == "classe5");
+            var aliq_presumido = parseInt(classe5_total_presumido) / parseInt(fat_12m);
             }
 
 
             //lucro real
+
+
 
             function classe1_calculolr(){
             var c1asse1_lucro_real = parseInt(lucro_liquido) * 12;
@@ -317,11 +319,60 @@
             var classe1_piscofins = piscofins;
             var classe1_outros = parseInt(fat_12m) * 0.18;
             var classe1_total_real = parseInt(classe1_ircs) + parseInt(classe1_piscofins) + parseInt(classe1_outros) + parseInt(classe1_clt);
-            var classe1_aliq_total =  parseInt(classe1_total_real) / parseInt(fat_12m);
+
+            if (ramo == "classe5");
+            var aliq_total =  parseInt(classe1_total_real) / parseInt(fat_12m);
 
 
             }
 
+            function classe2_calculolr(){
+            var c1asse2_lucro_real = parseInt(lucro_liquido) * 12;
+            var classe2_ircs = ircs;
+            var classe2_piscofins = piscofins;
+            var classe2_outros = parseInt(fat_12m) * 0.5;
+            var classe2_total_real = parseInt(classe2_ircs) + parseInt(classe2_piscofins) + parseInt(classe2_outros) + parseInt(classe2_clt);
+
+            if (ramo == "classe2");
+            var aliq_total =  parseInt(classe2_total_real) / parseInt(fat_12m);
+
+
+            }
+            function classe3_calculolr(){
+            var c1asse3_lucro_real = parseInt(lucro_liquido) * 12;
+            var classe3_ircs = ircs;
+            var classe3_piscofins = piscofins;
+            var classe3_outros = parseInt(fat_12m) * 0;
+            var classe3_total_real = parseInt(classe3_ircs) + parseInt(classe3_piscofins) + parseInt(classe3_outros) + parseInt(classe3_clt);
+
+            if (ramo == "classe3");
+            var aliq_total =  parseInt(classe3_total_real) / parseInt(fat_12m);
+
+
+            } function classe4_calculolr(){
+            var c1asse4_lucro_real = parseInt(lucro_liquido) * 12;
+            var classe4_ircs = ircs;
+            var classe4_piscofins = piscofins;
+            var classe4_outros = parseInt(fat_12m) * 0.05;
+            var classe4_total_real = parseInt(classe4_ircs) + parseInt(classe4_piscofins) + parseInt(classe4_outros) + parseInt(classe4_clt);
+
+            if (ramo == "classe4");
+            var aliq_total =  parseInt(classe4_total_real) / parseInt(fat_12m);
+
+
+
+            } function classe5_calculolr(){
+            var c1asse5_lucro_real = parseInt(lucro_liquido) * 12;
+            var classe5_ircs = ircs;
+            var classe5_piscofins = piscofins;
+            var classe5_outros = parseInt(fat_12m) * 0.18;
+            var classe5_total_real = parseInt(classe5_ircs) + parseInt(classe5_piscofins) + parseInt(classe5_outros) + parseInt(classe5_clt);
+
+            if (ramo == "classe5");
+            var aliq_total =  parseInt(classe5_total_real) / parseInt(fat_12m);
+
+
+            }
 
 
            
@@ -354,7 +405,8 @@
 
 
  function sera_que_ta_bom(){
-    if (parseInt(opcao_trib) == "1a" && parseInt(aliquota_simples_nacional) );
+    if (parseInt(opcao_trib) == "1a" && (parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido) ) ;
+
 
 
  }
