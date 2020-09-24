@@ -405,7 +405,15 @@
 
 
  function sera_que_ta_bom(){
-    if (parseInt(opcao_trib) == "1a" && (parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido) ) ;
+    if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) < parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) < parseInt(aliq_real)) 
+        || (opcao_trib == "1b" && ((parseInt(aliq_presumido) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) < parseInt(aliq_real)) )) 
+        || (opcao_trib == "1c" && ((parseInt(aliq_real) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) < parseInt(aliq_presumido)) ) );
+    var resultado = "muito bom";
+
+    else if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) > parseInt(aliq_real)) 
+        || (opcao_trib == "1b" && ((parseInt(aliq_presumido) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) > parseInt(aliq_real)) )) 
+        || (opcao_trib == "1c" && ((parseInt(aliq_real) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) > parseInt(aliq_presumido)) ) );
+    var resultado = "pessimo";
 
 
 
