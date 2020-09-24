@@ -30,10 +30,11 @@
             function calculo_ir(){
             if (lucro_presumido > 240000){
             var ir = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;
-            else var ir = parseInt(lucro_presumido) * 0.15;
+            } else var ir = parseInt(lucro_presumido) * 0.15;
             }
-            }
+            
 
+            //tem que arrumar, é isso =IF(((U29*0,15)+IF(U29>240000;(U29-240000)*0,1;0))+U29*0,09<0;0;((U29*0,15)+IF(U29>240000;(U29-240000)*0,1;0))+U29*0,09)
 
             function calculo_ircs(){
             if (lucro_real > 240000)
@@ -63,19 +64,19 @@
                 var limite_faixa1 = "180000";
                 var aliquota_faixa = 0.004;
                 var parc_ded = "0";
-                else if (cat_simples == "ii") {
+                } else if (cat_simples == "ii") {
                 var limite_faixa1 = "180000";
                 var aliquota_faixa = 0.045;
                 var parc_ded = "0";
-                else if (cat_simples == "iii") {
+                } else if (cat_simples == "iii") {
                 var limite_faixa1 = "180000";
                 var aliquota_faixa = 0.06;
                 var parc_ded = "0";
-                else if (cat_simples == "iv") {
+                } else if (cat_simples == "iv") {
                 var limite_faixa1 = "4800000";
                 var aliquota_faixa = 0.3;
                 var parc_ded = "72000";
-                else if (cat_simples == "v") {
+                } else if (cat_simples == "v") {
                 var limite_faixa1 = "180000";
                 var aliquota_faixa = 0.155;
                 var parc_ded = "0";
@@ -86,19 +87,19 @@
                 var limite_faixa2 = "360000";
                 var aliquota_faixa = 0.073;
                 var parc_ded = "0";
-                else if (cat_simples == "ii") {
+                } else if (cat_simples == "ii") {
                 var limite_faixa2 = "360000";
                 var aliquota_faixa = 0.078;
                 var parc_ded = "0";
-                else if (cat_simples == "iii") {
+                } else if (cat_simples == "iii") {
                 var limite_faixa2 = "360000";
                 var aliquota_faixa = 0.112;
                 var parc_ded = "0";
-                else if (cat_simples == "iv") {
+                } else if (cat_simples == "iv") {
                 var limite_faixa2 = "180000";
                 var aliquota_faixa = 0.045;
                 var parc_ded = "72000";
-                else if (cat_simples == "v") {
+                } else if (cat_simples == "v") {
                 var limite_faixa2 = "360000";
                 var aliquota_faixa = 0,18;
                 var parc_ded = "0";
@@ -110,19 +111,19 @@
                 var limite_faixa3 = "720000";
                 var aliquota_faixa = 0.073;
                 var parc_ded = "0";
-                else if (cat_simples == "ii") {
+                } else if (cat_simples == "ii") {
                 var limite_faixa3 = "720000";
                 var aliquota_faixa = 0.078;
                 var parc_ded = "0";
-                else if (cat_simples == "iii") {
+                } else if (cat_simples == "iii") {
                 var limite_faixa3 = "720000";
                 var aliquota_faixa = 0.112;
                 var parc_ded = "0";
-                else if (cat_simples == "iv") {
+                } else if (cat_simples == "iv") {
                 var limite_faixa3 = "360000";
                 var aliquota_faixa = 0.045;
                 var parc_ded = "72000";
-                else if (cat_simples == "v") {
+                } else if (cat_simples == "v") {
                 var limite_faixa3 = "720000";
                 var aliquota_faixa = 0.18;
                 var parc_ded = "0";
@@ -133,19 +134,19 @@
                 var limite_faixa4 = "1800000";
                 var aliquota_faixa = 0.107;
                 var parc_ded = "22500";
-                else if (cat_simples == "ii") {
+                } else if (cat_simples == "ii") {
                 var limite_faixa4 = "1800000";
                 var aliquota_faixa = 0.112;
                 var parc_ded = "22500";
-                else if (cat_simples == "iii") {
+                } else if (cat_simples == "iii") {
                 var limite_faixa4 = "1800000";
                 var aliquota_faixa = 0.16;
                 var parc_ded = "35640";
-                else if (cat_simples == "iv") {
+                } else if (cat_simples == "iv") {
                 var limite_faixa4 = "720000";
                 var aliquota_faixa = 0.102;
                 var parc_ded = "12420";
-                else if (cat_simples == "v") {
+                } else if (cat_simples == "v") {
                 var limite_faixa4 = "1800000";
                 var aliquota_faixa = 0.205;
                 var parc_ded = "17100";
@@ -156,19 +157,19 @@
                 var limite_faixa5 = "3600000";
                 var aliquota_faixa = 0.143;
                 var parc_ded = "87300";
-                else if (cat_simples == "ii") {
+                } else if (cat_simples == "ii") {
                 var limite_faixa5 = "3600000";
                 var aliquota_faixa = 0.147;
                 var parc_ded = "125640";
-                else if (cat_simples == "iii") {
+                } else if (cat_simples == "iii") {
                 var limite_faixa5 = "3600000";
                 var aliquota_faixa = 0.21;
                 var parc_ded = "35640";
-                else if (cat_simples == "iv") {
+                } else if (cat_simples == "iv") {
                 var limite_faixa5 = "1800000";
                 var aliquota_faixa = 0.14;
                 var parc_ded = "39780";
-                else if (cat_simples == "v") {
+                } else if (cat_simples == "v") {
                 var limite_faixa5 = "3600000";
                 var aliquota_faixa = 0.23;
                 var parc_ded = "62100";
@@ -179,19 +180,19 @@
                 var limite_faixa5 = "4800000";
                 var aliquota_faixa = 0.19;
                 var parc_ded = "378000";
-                else if (cat_simples == "ii") {
+                } else if (cat_simples == "ii") {
                 var limite_faixa5 = "4800000";
                 var aliquota_faixa = 0.3;
                 var parc_ded = "720000";
-                else if (cat_simples == "iii") {
+                } else if (cat_simples == "iii") {
                 var limite_faixa5 = "4800000";
                 var aliquota_faixa = 0.33;
                 var parc_ded = "648000";
-                else if (cat_simples == "iv") {
+                } else if (cat_simples == "iv") {
                 var limite_faixa5 = "3600000";
                 var aliquota_faixa = 0.22;
                 var parc_ded = "183780";
-                else if (cat_simples == "v") {
+                } else if (cat_simples == "v") {
                 var limite_faixa5 = "4800000";
                 var aliquota_faixa = 0.305;
                 var parc_ded = "540000";
@@ -392,7 +393,7 @@
  }
  if(document.getElementById("trib_atual").value == "1c") && ((document.getElementById("ramo") == "at_imob") || (document.getElementById("ramo") == "com") || (document.getElementById("ramo") == "ind_terc") || (document.getElementById("ramo") == "transp_cargo")); {classe1_calculolr()};
 
- else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolr()};
+    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolr()};
     else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "rev_comb")); {classe3_calculolr()};
     else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "serv_hosp")); {classe4_calculolr()};
     else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "transp")); {classe5_calculolr()};
@@ -402,24 +403,26 @@
  function sera_que_ta_bom(){
     if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) < parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) < parseInt(aliq_real)) 
         || (opcao_trib == "1b" && ((parseInt(aliq_presumido) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) < parseInt(aliq_real)) )) 
-        || (opcao_trib == "1c" && ((parseInt(aliq_real) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) < parseInt(aliq_presumido)) ) )));
-    var resultado = "otimo";
+        || (opcao_trib == "1c" && ((parseInt(aliq_real) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) < parseInt(aliq_presumido)) ) ))); {
+    var resultado = "otimo"; 
 
-    else if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) > parseInt(aliq_real)) 
+    } else if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) > parseInt(aliq_real)) 
         || (opcao_trib == "1b" && ((parseInt(aliq_presumido) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) > parseInt(aliq_real)) )) 
-        || (opcao_trib == "1c" && ((parseInt(aliq_real) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) > parseInt(aliq_presumido)) ) )));
+        || (opcao_trib == "1c" && ((parseInt(aliq_real) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) > parseInt(aliq_presumido)) ) ))); {
     var resultado = "pessimo";
-    else var resultado = "meh";
+    } else var resultado = "meh";
 }
  
  }
     function resultado_final(){
-        if resultado = "otimo";
+        if (resultado == "otimo");{
         var resultado_final = "Está tudo certo: os números indicam que a empresa está recolhendo tributos de acordo com a média das empresas do setor.";
-        else if resultado = "meh";
+        } else if (resultado == "meh"); {
         var resultado_final = "Ajustes são necessários: é possível que a empresa esteja recolhendo um pouco mais de tributos.";
-        else if resultado = "pessimo";
+        } else if (resultado == "pessimo") {;
         var resultado_final = "Atenção: tudo indica que a empresa esteja pagando muito mais tributos que outras empresas do setor. Entre em contato com a gente.";
+
+        document.getElementById('resultado_final').value = resultado_final;
 
     }
             
