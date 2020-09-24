@@ -407,18 +407,27 @@
  function sera_que_ta_bom(){
     if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) < parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) < parseInt(aliq_real)) 
         || (opcao_trib == "1b" && ((parseInt(aliq_presumido) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) < parseInt(aliq_real)) )) 
-        || (opcao_trib == "1c" && ((parseInt(aliq_real) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) < parseInt(aliq_presumido)) ) );
-    var resultado = "muito bom";
+        || (opcao_trib == "1c" && ((parseInt(aliq_real) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) < parseInt(aliq_presumido)) ) )));
+    var resultado = "otimo";
 
     else if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) > parseInt(aliq_real)) 
         || (opcao_trib == "1b" && ((parseInt(aliq_presumido) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) > parseInt(aliq_real)) )) 
-        || (opcao_trib == "1c" && ((parseInt(aliq_real) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) > parseInt(aliq_presumido)) ) );
+        || (opcao_trib == "1c" && ((parseInt(aliq_real) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) > parseInt(aliq_presumido)) ) )));
     var resultado = "pessimo";
-
-
+    else var resultado = "meh";
+}
+    // falta arrumar aqui
 
  }
-            
+    function resultado_final(){
+        if resultado = "otimo";
+        var resultado_final = "Está tudo certo: os números indicam que a empresa está recolhendo tributos de acordo com a média das empresas do setor.";
+        else if resultado = "meh";
+        var resultado_final = "Ajustes são necessários: é possível que a empresa esteja recolhendo um pouco mais de tributos.";
+        else if resultado = "pessimo";
+        var resultado_final = "Atenção: tudo indica que a empresa esteja pagando muito mais tributos que outras empresas do setor. Entre em contato com a gente.";
+
+    }
             
             
             
@@ -477,7 +486,7 @@
                 <input id="calcular" type="button" value="Calcular" onclick="opcao()"/>
                 <input id="limpar" type="reset" value="Resetar"/> <br/> <br/>
                 
-                Resultado: <input id="resultado" type="text" size="15" disabled="true"/>
+                Resultado: <input id="resultado_final" type="text" size="15" disabled="true"/>
 
          </form>
 
