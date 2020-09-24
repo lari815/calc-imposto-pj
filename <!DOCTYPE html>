@@ -30,19 +30,17 @@
             function calculo_ir(){
             if (lucro_presumido > 240000){
             var ir = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;
-            } else {
-            var ir = parseInt(lucro_presumido) * 0.15;
+            else var ir = parseInt(lucro_presumido) * 0.15;
             }
             }
 
 
             function calculo_ircs(){
-            if (lucro_real > 240000) {var lucro_real = parseInt(lucro_real) - 240000 * 0.1}
-                else var lucro_real = 0 }{
-            
-            var ircs = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;
-            } else {
-            var ircs = parseInt(lucro_presumido) * 0.15;
+            if (lucro_real > 240000)
+                {var lucro_real = parseInt(lucro_real) - 240000 * 0.1}
+                else var lucro_real = 0 {
+            var ircs = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1; }
+            else var ircs = parseInt(lucro_presumido) * 0.15;
             }
             
 
@@ -429,7 +427,7 @@
             
 
         </script>
-        
+
     </header>
     <body>
 
