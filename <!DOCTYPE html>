@@ -65,18 +65,189 @@
            
             //simples nacional
 
-           function faixa_simples(){
-            if (trib_atual == "i" && fat_12m =< "180000" {
-                var faixa
+            function calculo_aliquota_parc_faixa_1(){
+            if (cat_simples == "i") {
+                var limite_faixa1 = "180000";
+                var aliquota_faixa = "4%";
+                var parc_ded = "0";
+                else if (cat_simples == "ii") {
+                var limite_faixa1 = "180000";
+                var aliquota_faixa = "4.5%";
+                var parc_ded = "0";
+                else if (cat_simples == "iii") {
+                var limite_faixa1 = "180000";
+                var aliquota_faixa = "6%";
+                var parc_ded = "0";
+                else if (cat_simples == "iv") {
+                var limite_faixa1 = "4800000";
+                var aliquota_faixa = "30%";
+                var parc_ded = "72000";
+                else if (cat_simples == "v") {
+                var limite_faixa1 = "180000";
+                var aliquota_faixa = "15.5%";
+                var parc_ded = "0";
             }}
 
-           function calculo_simples(){
-            if (trib_atual == "i" && faixa){
-                var 
+           function calculo_aliquota_parc_faixa_2(){
+            if (cat_simples == "i") {
+                var limite_faixa2 = "360000";
+                var aliquota_faixa = "7.3%";
+                var parc_ded = "0";
+                else if (cat_simples == "ii") {
+                var limite_faixa2 = "360000";
+                var aliquota_faixa = "7.8%";
+                var parc_ded = "0";
+                else if (cat_simples == "iii") {
+                var limite_faixa2 = "360000";
+                var aliquota_faixa = "11.2%";
+                var parc_ded = "0";
+                else if (cat_simples == "iv") {
+                var limite_faixa2 = "180000";
+                var aliquota_faixa = "4.5%";
+                var parc_ded = "72000";
+                else if (cat_simples == "v") {
+                var limite_faixa2 = "360000";
+                var aliquota_faixa = "18%";
+                var parc_ded = "0";
             }}
+
+
+            function calculo_aliquota_parc_faixa_3(){
+            if (cat_simples == "i") {
+                var limite_faixa3 = "720000";
+                var aliquota_faixa = "7.3%";
+                var parc_ded = "0";
+                else if (cat_simples == "ii") {
+                var limite_faixa3 = "720000";
+                var aliquota_faixa = "7.8%";
+                var parc_ded = "0";
+                else if (cat_simples == "iii") {
+                var limite_faixa3 = "720000";
+                var aliquota_faixa = "11.2%";
+                var parc_ded = "0";
+                else if (cat_simples == "iv") {
+                var limite_faixa3 = "360000";
+                var aliquota_faixa = "4.5%";
+                var parc_ded = "72000";
+                else if (cat_simples == "v") {
+                var limite_faixa3 = "720000";
+                var aliquota_faixa = "18%";
+                var parc_ded = "0";
+            }}
+
+            function calculo_aliquota_parc_faixa_4(){
+            if (cat_simples == "i") {
+                var limite_faixa4 = "1800000";
+                var aliquota_faixa = "10.7%";
+                var parc_ded = "22500";
+                else if (cat_simples == "ii") {
+                var limite_faixa4 = "1800000";
+                var aliquota_faixa = "11.2%";
+                var parc_ded = "22500";
+                else if (cat_simples == "iii") {
+                var limite_faixa4 = "1800000";
+                var aliquota_faixa = "16%";
+                var parc_ded = "35640";
+                else if (cat_simples == "iv") {
+                var limite_faixa4 = "720000";
+                var aliquota_faixa = "10.2%";
+                var parc_ded = "12420";
+                else if (cat_simples == "v") {
+                var limite_faixa4 = "1800000";
+                var aliquota_faixa = "20.5%";
+                var parc_ded = "17100";
+            }}
+
+            function calculo_aliquota_parc_faixa_5(){
+            if (cat_simples == "i") {
+                var limite_faixa5 = "3600000";
+                var aliquota_faixa = "14.3%";
+                var parc_ded = "87300";
+                else if (cat_simples == "ii") {
+                var limite_faixa5 = "3600000";
+                var aliquota_faixa = "14.7%";
+                var parc_ded = "125640";
+                else if (cat_simples == "iii") {
+                var limite_faixa5 = "3600000";
+                var aliquota_faixa = "21%";
+                var parc_ded = "35640";
+                else if (cat_simples == "iv") {
+                var limite_faixa5 = "1800000";
+                var aliquota_faixa = "14%";
+                var parc_ded = "39780";
+                else if (cat_simples == "v") {
+                var limite_faixa5 = "3600000";
+                var aliquota_faixa = "23%";
+                var parc_ded = "62100";
+            }}
+
+            function calculo_aliquota_parc_faixa_6(){
+            if (cat_simples == "i") {
+                var limite_faixa5 = "4800000";
+                var aliquota_faixa = "19%";
+                var parc_ded = "378000";
+                else if (cat_simples == "ii") {
+                var limite_faixa5 = "4800000";
+                var aliquota_faixa = "30%";
+                var parc_ded = "720000";
+                else if (cat_simples == "iii") {
+                var limite_faixa5 = "4800000";
+                var aliquota_faixa = "33%";
+                var parc_ded = "648000";
+                else if (cat_simples == "iv") {
+                var limite_faixa5 = "3600000";
+                var aliquota_faixa = "22%";
+                var parc_ded = "183780";
+                else if (cat_simples == "v") {
+                var limite_faixa5 = "4800000";
+                var aliquota_faixa = "30.5%";
+                var parc_ded = "540000";
+            }}
+
+
+           function calculo_faixa(){
+            if (parseInt(fat_12m) <= parseInt(limite_faixa1)) {
+                var faixa_simples = "faixa1";
+                else if (parseInt(fat_12m) <= parseInt(limite_faixa2)) {
+                var faixa_simples = "faixa2";
+                else if (parseInt(fat_12m) <= parseInt(limite_faixa3)) {
+                var faixa_simples = "faixa3";
+                else if (parseInt(fat_12m) <= parseInt(limite_faixa5)) {
+                var faixa_simples = "faixa4";
+                else if (parseInt(fat_12m) <= parseInt(limite_faixa5)) {
+                var faixa_simples = "faixa5";
+                else if (parseInt(fat_12m) >= parseInt(limite_faixa6)) {
+                var faixa_simples = "faixa6 ";
+            }}}}}}}
             
+
+            function calculo_simples_nacional(){
+                var aliquota_simples_nacional = (parseInt(fat12m) * (parseInt(aliquota_faixa) - parseInt(parc_ded)) / parseInt(fat12m);
+
+            }
+
+
             //lucro presumido
           
+            function define_lp(){
+                if ramo == ("at_imob" || "com" || "ind_terc" "transp_cargo");
+                var classe = "classe1";
+                else if ramo == ("prest_serv");
+                var classe = "classe2";
+                else if ramo == ("rev_comb");
+                var classe = "classe3";
+                else if ramo == ("serv_hosp");
+                var classe = "classe4";
+                else if ramo == ("transp");
+                var classe = "classe5";
+            }
+
+            function calculo_lp(){
+                if classe == "classe1";
+                
+
+            }
+
            function classe1_calculolp(){
             var c1asse1_lucro_presumido = 0.08 * parseInt(fat_12m);
             var classe1_ir = calculo_ir();
@@ -99,6 +270,7 @@
             var classe2_total_presumido = parseInt(classe2_ir) + parseInt(classe2_unk) + parseInt(classe2_outros) + parseInt(classe2_clt);
             
             var classe2_aliq_presumido = parseInt(classe2_total_presumido) / parseInt(fat_12m);
+            }
 
             function classe3_calculolp(){
             var c1asse3_lucro_presumido = 0.016 * parseInt(fat_12m);
@@ -110,6 +282,7 @@
             var classe3_total_presumido = parseInt(classe3_ir) + parseInt(classe3_unk) + parseInt(classe3_outros) + parseInt(classe3_clt);
             
             var classe3_aliq_presumido = parseInt(classe3_total_presumido) / parseInt(fat_12m);
+            }
 
             function classe4_calculolp(){
             var c1asse4_lucro_presumido = 0.08 * parseInt(fat_12m);
@@ -121,6 +294,7 @@
             var classe4_total_presumido = parseInt(classe4_ir) + parseInt(classe4_unk) + parseInt(classe4_outros) + parseInt(classe4_clt);
             
             var classe4_aliq_presumido = parseInt(classe4_total_presumido) / parseInt(fat_12m);
+            }
 
             function classe5_calculolp(){
             var c1asse5_lucro_presumido = 0.16 * parseInt(fat_12m);
@@ -132,7 +306,7 @@
             var classe5_total_presumido = parseInt(classe5_ir) + parseInt(classe5_unk) + parseInt(classe5_outros) + parseInt(classe5_clt);
             
             var classe5_aliq_presumido = parseInt(classe5_total_presumido) / parseInt(fat_12m);
-
+            }
 
 
             //lucro real
@@ -179,7 +353,11 @@
  }
 
 
- 
+ function sera_que_ta_bom(){
+    if (parseInt(opcao_trib) == "1a" && parseInt(aliquota_simples_nacional) );
+
+
+ }
             
             
             
@@ -212,7 +390,7 @@
                 <option id="valor" value="v">V</option>
                 </select> <br/>
                 
-                Ramo de atividade: <select id="ramo" onblur="opcao()">
+                Ramo de atividade: <select id="ramo" onblur="opcao_ramo()">
                 <option id="valor" value=""> </option>
                 <option id="valor" value="at_imob">Atividades imobiliárias</option>
                 <option id="valor" value="com">Comércio</option>
