@@ -27,22 +27,16 @@
             var c5_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe5_outros)) / 12;
             
 
-            function calculo_ir(){
-            if (lucro_presumido > 240000){
-            var ir = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;
-            } else var ir = parseInt(lucro_presumido) * 0.15;
-            }
+            function calculo_ir(){   if (lucro_presumido > 240000) {     var ir = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;   }   else {     var ir = parseInt(lucro_presumido) * 0.15;   }  }
             
 
-            //tem que arrumar, é isso =IF(((U29*0,15)+IF(U29>240000;(U29-240000)*0,1;0))+U29*0,09<0;0;((U29*0,15)+IF(U29>240000;(U29-240000)*0,1;0))+U29*0,09)
+            //tem que arrumar, é isso =IF(((LP*0,15)+ IF(LP>240000;(LP-240000)*0,1;0))+LP*0,09<0;0; ((LP*0,15)+IF(LP>240000; (LP-240000)*0,1;0))+LP*0,09)
 
             function calculo_ircs(){
             if (lucro_real > 240000)
                 {var lucro_real = parseInt(lucro_real) - 240000 * 0.1}
-                else var lucro_real = 0 {
-            var ircs = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1; }
-            else var ircs = parseInt(lucro_presumido) * 0.15;
-            }
+                else {var lucro_real = 0};
+            var ircs = 
             
 
 
