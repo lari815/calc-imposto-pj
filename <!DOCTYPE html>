@@ -61,46 +61,46 @@
             function calculo_aliquota_parc_faixa_1(){
             if (cat_simples == "i") {
                 var limite_faixa1 = "180000";
-                var aliquota_faixa = "4%";
+                var aliquota_faixa = 0.004;
                 var parc_ded = "0";
                 else if (cat_simples == "ii") {
                 var limite_faixa1 = "180000";
-                var aliquota_faixa = "4.5%";
+                var aliquota_faixa = 0.045;
                 var parc_ded = "0";
                 else if (cat_simples == "iii") {
                 var limite_faixa1 = "180000";
-                var aliquota_faixa = "6%";
+                var aliquota_faixa = 0.06;
                 var parc_ded = "0";
                 else if (cat_simples == "iv") {
                 var limite_faixa1 = "4800000";
-                var aliquota_faixa = "30%";
+                var aliquota_faixa = 0.3;
                 var parc_ded = "72000";
                 else if (cat_simples == "v") {
                 var limite_faixa1 = "180000";
-                var aliquota_faixa = "15.5%";
+                var aliquota_faixa = 0.155;
                 var parc_ded = "0";
             }}
 
            function calculo_aliquota_parc_faixa_2(){
             if (cat_simples == "i") {
                 var limite_faixa2 = "360000";
-                var aliquota_faixa = "7.3%";
+                var aliquota_faixa = 0.073;
                 var parc_ded = "0";
                 else if (cat_simples == "ii") {
                 var limite_faixa2 = "360000";
-                var aliquota_faixa = "7.8%";
+                var aliquota_faixa = 0.078;
                 var parc_ded = "0";
                 else if (cat_simples == "iii") {
                 var limite_faixa2 = "360000";
-                var aliquota_faixa = "11.2%";
+                var aliquota_faixa = 0.112;
                 var parc_ded = "0";
                 else if (cat_simples == "iv") {
                 var limite_faixa2 = "180000";
-                var aliquota_faixa = "4.5%";
+                var aliquota_faixa = 0.045;
                 var parc_ded = "72000";
                 else if (cat_simples == "v") {
                 var limite_faixa2 = "360000";
-                var aliquota_faixa = "18%";
+                var aliquota_faixa = 0,18;
                 var parc_ded = "0";
             }}
 
@@ -108,92 +108,92 @@
             function calculo_aliquota_parc_faixa_3(){
             if (cat_simples == "i") {
                 var limite_faixa3 = "720000";
-                var aliquota_faixa = "7.3%";
+                var aliquota_faixa = 0.073;
                 var parc_ded = "0";
                 else if (cat_simples == "ii") {
                 var limite_faixa3 = "720000";
-                var aliquota_faixa = "7.8%";
+                var aliquota_faixa = 0.078;
                 var parc_ded = "0";
                 else if (cat_simples == "iii") {
                 var limite_faixa3 = "720000";
-                var aliquota_faixa = "11.2%";
+                var aliquota_faixa = 0.112;
                 var parc_ded = "0";
                 else if (cat_simples == "iv") {
                 var limite_faixa3 = "360000";
-                var aliquota_faixa = "4.5%";
+                var aliquota_faixa = 0.045;
                 var parc_ded = "72000";
                 else if (cat_simples == "v") {
                 var limite_faixa3 = "720000";
-                var aliquota_faixa = "18%";
+                var aliquota_faixa = 0.18;
                 var parc_ded = "0";
             }}
 
             function calculo_aliquota_parc_faixa_4(){
             if (cat_simples == "i") {
                 var limite_faixa4 = "1800000";
-                var aliquota_faixa = "10.7%";
+                var aliquota_faixa = 0.107;
                 var parc_ded = "22500";
                 else if (cat_simples == "ii") {
                 var limite_faixa4 = "1800000";
-                var aliquota_faixa = "11.2%";
+                var aliquota_faixa = 0.112;
                 var parc_ded = "22500";
                 else if (cat_simples == "iii") {
                 var limite_faixa4 = "1800000";
-                var aliquota_faixa = "16%";
+                var aliquota_faixa = 0.16;
                 var parc_ded = "35640";
                 else if (cat_simples == "iv") {
                 var limite_faixa4 = "720000";
-                var aliquota_faixa = "10.2%";
+                var aliquota_faixa = 0.102;
                 var parc_ded = "12420";
                 else if (cat_simples == "v") {
                 var limite_faixa4 = "1800000";
-                var aliquota_faixa = "20.5%";
+                var aliquota_faixa = 0.205;
                 var parc_ded = "17100";
             }}
 
             function calculo_aliquota_parc_faixa_5(){
             if (cat_simples == "i") {
                 var limite_faixa5 = "3600000";
-                var aliquota_faixa = "14.3%";
+                var aliquota_faixa = 0.143;
                 var parc_ded = "87300";
                 else if (cat_simples == "ii") {
                 var limite_faixa5 = "3600000";
-                var aliquota_faixa = "14.7%";
+                var aliquota_faixa = 0.147;
                 var parc_ded = "125640";
                 else if (cat_simples == "iii") {
                 var limite_faixa5 = "3600000";
-                var aliquota_faixa = "21%";
+                var aliquota_faixa = 0.21;
                 var parc_ded = "35640";
                 else if (cat_simples == "iv") {
                 var limite_faixa5 = "1800000";
-                var aliquota_faixa = "14%";
+                var aliquota_faixa = 0.14;
                 var parc_ded = "39780";
                 else if (cat_simples == "v") {
                 var limite_faixa5 = "3600000";
-                var aliquota_faixa = "23%";
+                var aliquota_faixa = 0.23;
                 var parc_ded = "62100";
             }}
 
             function calculo_aliquota_parc_faixa_6(){
             if (cat_simples == "i") {
                 var limite_faixa5 = "4800000";
-                var aliquota_faixa = "19%";
+                var aliquota_faixa = 0.19;
                 var parc_ded = "378000";
                 else if (cat_simples == "ii") {
                 var limite_faixa5 = "4800000";
-                var aliquota_faixa = "30%";
+                var aliquota_faixa = 0.3;
                 var parc_ded = "720000";
                 else if (cat_simples == "iii") {
                 var limite_faixa5 = "4800000";
-                var aliquota_faixa = "33%";
+                var aliquota_faixa = 0.33;
                 var parc_ded = "648000";
                 else if (cat_simples == "iv") {
                 var limite_faixa5 = "3600000";
-                var aliquota_faixa = "22%";
+                var aliquota_faixa = 0.22;
                 var parc_ded = "183780";
                 else if (cat_simples == "v") {
                 var limite_faixa5 = "4800000";
-                var aliquota_faixa = "30.5%";
+                var aliquota_faixa = 0.305;
                 var parc_ded = "540000";
             }}
 
