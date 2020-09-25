@@ -1,490 +1,557 @@
 <!DOCTYPE html>
 <html>
-    <header>
-<script type="text/javascript">
-            
-            var trib_atual = document.getElementById("trib_atual");
-            var anexo_simples = document.getElementById("anexo_simples");
-            var ramo = document.getElementById("ramo");
-            
-            var fat_mensal = document.getElementById("fat_mensal").value;
-            var fat_12m = ("fat_12m"*12);
-            
-            var custos_merc = document.getElementById("custos_merc").value;
-            var custos_adm = document.getElementById("custos_adm").value;
-            var custos_clt = document.getElementById("custos_clt").value;
-            var custos_mkt = document.getElementById("custos_mkt").value;
-            var custos_mensais = parseInt(custos_merc) + parseInt(custos_adm) + parseInt(custos_clt) + parseInt(custos_mkt);
-            
-            var lucro_liquido = parseInt(fat_mensal) - parseInt(custos_mensais);
-            var lucro_real = parseInt(lucro_liquido) * 12;
-            
-            
-            var c1_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe1_outros)) / 12;
-            var c2_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe2_outros)) / 12;
-            var c3_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe3_outros)) / 12;
-            var c4_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe4_outros)) / 12;
-            var c5_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe5_outros)) / 12;
-            
+  <header>
+    <style>
 
-            function calculo_ir(){   if (lucro_presumido > 240000) {     var ir = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;   }   else {     var ir = parseInt(lucro_presumido) * 0.15;   }  }
-            
+h1 {position: absolute;
+width: 613px;
+height: 31px;
+left: 314px;
+top: 163px;
 
-            //tem que arrumar, é isso =IF(((LP*0,15)+ IF(LP>240000;(LP-240000)*0,1;0))+LP*0,09<0;0; ((LP*0,15)+IF(LP>240000; (LP-240000)*0,1;0))+LP*0,09)
+font-family: SF Pro Text;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 31px;
+/* identical to box height */
 
-            function calculo_ircs(){
-            if (lucro_real > 240000)
-                {var lucro_real = parseInt(lucro_real) - 240000 * 0.1}
-                else {var lucro_real = 0};
-            var ircs = 
-            
+text-align: center;
 
+color: #FFFFFF;
 
-
-            function calculo_piscofins(){
-            if ((((parseInt(fat_mensal) * 0.0925)) - (parseInt(custos_merc) - parseInt(custos_mkt)) * 0.0925) * 12) < 0 = 0 {
-            var piscofins = 0;
-            } else {
-            var piscofins = (((parseInt(fat_mensal) * 0.0925)) - (parseInt(custos_merc) - parseInt(custos_mkt)) * 0.0925) * 12;
-            }
-            }
-
-
-           
-            //simples nacional
-
-            function calculo_aliquota_parc_faixa_1(){
-            if (cat_simples == "i") {
-                var limite_faixa1 = "180000";
-                var aliquota_faixa = 0.004;
-                var parc_ded = "0";
-                } else if (cat_simples == "ii") {
-                var limite_faixa1 = "180000";
-                var aliquota_faixa = 0.045;
-                var parc_ded = "0";
-                } else if (cat_simples == "iii") {
-                var limite_faixa1 = "180000";
-                var aliquota_faixa = 0.06;
-                var parc_ded = "0";
-                } else if (cat_simples == "iv") {
-                var limite_faixa1 = "4800000";
-                var aliquota_faixa = 0.3;
-                var parc_ded = "72000";
-                } else if (cat_simples == "v") {
-                var limite_faixa1 = "180000";
-                var aliquota_faixa = 0.155;
-                var parc_ded = "0";
-            }}
-
-           function calculo_aliquota_parc_faixa_2(){
-            if (cat_simples == "i") {
-                var limite_faixa2 = "360000";
-                var aliquota_faixa = 0.073;
-                var parc_ded = "0";
-                } else if (cat_simples == "ii") {
-                var limite_faixa2 = "360000";
-                var aliquota_faixa = 0.078;
-                var parc_ded = "0";
-                } else if (cat_simples == "iii") {
-                var limite_faixa2 = "360000";
-                var aliquota_faixa = 0.112;
-                var parc_ded = "0";
-                } else if (cat_simples == "iv") {
-                var limite_faixa2 = "180000";
-                var aliquota_faixa = 0.045;
-                var parc_ded = "72000";
-                } else if (cat_simples == "v") {
-                var limite_faixa2 = "360000";
-                var aliquota_faixa = 0,18;
-                var parc_ded = "0";
-            }}
-
-
-            function calculo_aliquota_parc_faixa_3(){
-            if (cat_simples == "i") {
-                var limite_faixa3 = "720000";
-                var aliquota_faixa = 0.073;
-                var parc_ded = "0";
-                } else if (cat_simples == "ii") {
-                var limite_faixa3 = "720000";
-                var aliquota_faixa = 0.078;
-                var parc_ded = "0";
-                } else if (cat_simples == "iii") {
-                var limite_faixa3 = "720000";
-                var aliquota_faixa = 0.112;
-                var parc_ded = "0";
-                } else if (cat_simples == "iv") {
-                var limite_faixa3 = "360000";
-                var aliquota_faixa = 0.045;
-                var parc_ded = "72000";
-                } else if (cat_simples == "v") {
-                var limite_faixa3 = "720000";
-                var aliquota_faixa = 0.18;
-                var parc_ded = "0";
-            }}
-
-            function calculo_aliquota_parc_faixa_4(){
-            if (cat_simples == "i") {
-                var limite_faixa4 = "1800000";
-                var aliquota_faixa = 0.107;
-                var parc_ded = "22500";
-                } else if (cat_simples == "ii") {
-                var limite_faixa4 = "1800000";
-                var aliquota_faixa = 0.112;
-                var parc_ded = "22500";
-                } else if (cat_simples == "iii") {
-                var limite_faixa4 = "1800000";
-                var aliquota_faixa = 0.16;
-                var parc_ded = "35640";
-                } else if (cat_simples == "iv") {
-                var limite_faixa4 = "720000";
-                var aliquota_faixa = 0.102;
-                var parc_ded = "12420";
-                } else if (cat_simples == "v") {
-                var limite_faixa4 = "1800000";
-                var aliquota_faixa = 0.205;
-                var parc_ded = "17100";
-            }}
-
-            function calculo_aliquota_parc_faixa_5(){
-            if (cat_simples == "i") {
-                var limite_faixa5 = "3600000";
-                var aliquota_faixa = 0.143;
-                var parc_ded = "87300";
-                } else if (cat_simples == "ii") {
-                var limite_faixa5 = "3600000";
-                var aliquota_faixa = 0.147;
-                var parc_ded = "125640";
-                } else if (cat_simples == "iii") {
-                var limite_faixa5 = "3600000";
-                var aliquota_faixa = 0.21;
-                var parc_ded = "35640";
-                } else if (cat_simples == "iv") {
-                var limite_faixa5 = "1800000";
-                var aliquota_faixa = 0.14;
-                var parc_ded = "39780";
-                } else if (cat_simples == "v") {
-                var limite_faixa5 = "3600000";
-                var aliquota_faixa = 0.23;
-                var parc_ded = "62100";
-            }}
-
-            function calculo_aliquota_parc_faixa_6(){
-            if (cat_simples == "i") {
-                var limite_faixa5 = "4800000";
-                var aliquota_faixa = 0.19;
-                var parc_ded = "378000";
-                } else if (cat_simples == "ii") {
-                var limite_faixa5 = "4800000";
-                var aliquota_faixa = 0.3;
-                var parc_ded = "720000";
-                } else if (cat_simples == "iii") {
-                var limite_faixa5 = "4800000";
-                var aliquota_faixa = 0.33;
-                var parc_ded = "648000";
-                } else if (cat_simples == "iv") {
-                var limite_faixa5 = "3600000";
-                var aliquota_faixa = 0.22;
-                var parc_ded = "183780";
-                } else if (cat_simples == "v") {
-                var limite_faixa5 = "4800000";
-                var aliquota_faixa = 0.305;
-                var parc_ded = "540000";
-            }}
-
-
-           function calculo_faixa(){
-            if (parseInt(fat_12m) <= parseInt(limite_faixa1)) {
-                var faixa_simples = "faixa1";
-                else if (parseInt(fat_12m) <= parseInt(limite_faixa2)) {
-                var faixa_simples = "faixa2";
-                else if (parseInt(fat_12m) <= parseInt(limite_faixa3)) {
-                var faixa_simples = "faixa3";
-                else if (parseInt(fat_12m) <= parseInt(limite_faixa5)) {
-                var faixa_simples = "faixa4";
-                else if (parseInt(fat_12m) <= parseInt(limite_faixa5)) {
-                var faixa_simples = "faixa5";
-                else if (parseInt(fat_12m) >= parseInt(limite_faixa6)) {
-                var faixa_simples = "faixa6 ";
-            }}}}}}}
-            
-
-            function calculo_simples_nacional(){
-                var aliquota_simples_nacional = (parseInt(fat12m) * (parseInt(aliquota_faixa) - parseInt(parc_ded)) / parseInt(fat12m);
-
-            }
-
-
-            //lucro presumido
-          
-            function define_lp(){
-                if ramo == ("at_imob" || "com" || "ind_terc" "transp_cargo");
-                var classe = "classe1";
-                else if ramo == ("prest_serv");
-                var classe = "classe2";
-                else if ramo == ("rev_comb");
-                var classe = "classe3";
-                else if ramo == ("serv_hosp");
-                var classe = "classe4";
-                else if ramo == ("transp");
-                var classe = "classe5";
-            }
-
-                
-            }
-
-           function classe1_calculolp(){
-            var c1asse1_lucro_presumido = 0.08 * parseInt(fat_12m);
-            var classe1_ir = calculo_ir();
-            var classe1_lucro_presumido_csll = 0.08 * parseInt(fat_12m);
-            var classe1_unk = parseInt(classe1_lucro_presumido_csll) * 0.09;
-            var classe1_outros = parseInt(fat_12m) * (0.18 + 0.0365);
-            var classe1_clt = parseInt(custos_clt) * 12 * 0.358;
-            var classe1_total_presumido = parseInt(classe1_ir) + parseInt(classe1_unk) + parseInt(classe1_outros) + parseInt(classe1_clt);
-
-            if (ramo == "classe1");
-            var aliq_presumido = parseInt(classe1_total_presumido) / parseInt(fat_12m);
-          }
-            
-            function classe2_calculolp(){
-            var c1asse2_lucro_presumido = 0.32 * parseInt(fat_12m);
-            var classe2_ir = calculo_ir();
-            var classe2_lucro_presumido_csll = 0.32 * parseInt(fat_12m);
-            var classe2_unk = parseInt(classe2_lucro_presumido_csll) * 0.09;
-            var classe2_outros = parseInt(fat_12m) * (0.05 + 0.0365);
-            var classe2_clt = parseInt(custos_clt) * 12 * 0.358;
-            var classe2_total_presumido = parseInt(classe2_ir) + parseInt(classe2_unk) + parseInt(classe2_outros) + parseInt(classe2_clt);
-            
-            if (ramo == "classe2");
-            var aliq_presumido = parseInt(classe2_total_presumido) / parseInt(fat_12m);
-            }
-
-            function classe3_calculolp(){
-            var c1asse3_lucro_presumido = 0.016 * parseInt(fat_12m);
-            var classe3_ir = calculo_ir();
-            var classe3_lucro_presumido_csll = 0.016 * parseInt(fat_12m);
-            var classe3_unk = parseInt(classe3_lucro_presumido_csll) * 0.09;
-            var classe3_outros = 0;
-            var classe3_clt = parseInt(custos_clt) * 12 * 0.358;
-            var classe3_total_presumido = parseInt(classe3_ir) + parseInt(classe3_unk) + parseInt(classe3_outros) + parseInt(classe3_clt);
-            
-            if (ramo == "classe3");
-            var aliq_presumido = parseInt(classe3_total_presumido) / parseInt(fat_12m);
-            }
-
-            function classe4_calculolp(){
-            var c1asse4_lucro_presumido = 0.08 * parseInt(fat_12m);
-            var classe4_ir = calculo_ir();
-            var classe4_lucro_presumido_csll = 0.12 * parseInt(fat_12m);
-            var classe4_unk = parseInt(classe4_lucro_presumido_csll) * 0.09;
-            var classe4_outros = parseInt(fat_12m) * (0.05 + 0.0365);
-            var classe4_clt = parseInt(custos_clt) * 12 * 0.358;
-            var classe4_total_presumido = parseInt(classe4_ir) + parseInt(classe4_unk) + parseInt(classe4_outros) + parseInt(classe4_clt);
-            
-            if (ramo == "classe4");
-            var aliq_presumido = parseInt(classe4_total_presumido) / parseInt(fat_12m);
-            }
-
-            function classe5_calculolp(){
-            var c1asse5_lucro_presumido = 0.16 * parseInt(fat_12m);
-            var classe5_ir = calculo_ir();
-            var classe5_lucro_presumido_csll = 0.16 * parseInt(fat_12m);
-            var classe5_unk = parseInt(classe5_lucro_presumido_csll) * 0.09;
-            var classe5_outros = parseInt(fat_12m) * (0.18 + 0.0365);
-            var classe5_clt = parseInt(custos_clt) * 12 * 0.358;
-            var classe5_total_presumido = parseInt(classe5_ir) + parseInt(classe5_unk) + parseInt(classe5_outros) + parseInt(classe5_clt);
-            
-            if (ramo == "classe5");
-            var aliq_presumido = parseInt(classe5_total_presumido) / parseInt(fat_12m);
-            }
-
-
-            //lucro real
-
-
-
-            function classe1_calculolr(){
-            var c1asse1_lucro_real = parseInt(lucro_liquido) * 12;
-            var classe1_ircs = ircs;
-            var classe1_piscofins = piscofins;
-            var classe1_outros = parseInt(fat_12m) * 0.18;
-            var classe1_total_real = parseInt(classe1_ircs) + parseInt(classe1_piscofins) + parseInt(classe1_outros) + parseInt(classe1_clt);
-
-            if (ramo == "classe5");
-            var aliq_total =  parseInt(classe1_total_real) / parseInt(fat_12m);
-
-
-            }
-
-            function classe2_calculolr(){
-            var c1asse2_lucro_real = parseInt(lucro_liquido) * 12;
-            var classe2_ircs = ircs;
-            var classe2_piscofins = piscofins;
-            var classe2_outros = parseInt(fat_12m) * 0.5;
-            var classe2_total_real = parseInt(classe2_ircs) + parseInt(classe2_piscofins) + parseInt(classe2_outros) + parseInt(classe2_clt);
-
-            if (ramo == "classe2");
-            var aliq_total =  parseInt(classe2_total_real) / parseInt(fat_12m);
-
-
-            }
-            function classe3_calculolr(){
-            var c1asse3_lucro_real = parseInt(lucro_liquido) * 12;
-            var classe3_ircs = ircs;
-            var classe3_piscofins = piscofins;
-            var classe3_outros = parseInt(fat_12m) * 0;
-            var classe3_total_real = parseInt(classe3_ircs) + parseInt(classe3_piscofins) + parseInt(classe3_outros) + parseInt(classe3_clt);
-
-            if (ramo == "classe3");
-            var aliq_total =  parseInt(classe3_total_real) / parseInt(fat_12m);
-
-
-            } function classe4_calculolr(){
-            var c1asse4_lucro_real = parseInt(lucro_liquido) * 12;
-            var classe4_ircs = ircs;
-            var classe4_piscofins = piscofins;
-            var classe4_outros = parseInt(fat_12m) * 0.05;
-            var classe4_total_real = parseInt(classe4_ircs) + parseInt(classe4_piscofins) + parseInt(classe4_outros) + parseInt(classe4_clt);
-
-            if (ramo == "classe4");
-            var aliq_total =  parseInt(classe4_total_real) / parseInt(fat_12m);
-
-
-
-            } function classe5_calculolr(){
-            var c1asse5_lucro_real = parseInt(lucro_liquido) * 12;
-            var classe5_ircs = ircs;
-            var classe5_piscofins = piscofins;
-            var classe5_outros = parseInt(fat_12m) * 0.18;
-            var classe5_total_real = parseInt(classe5_ircs) + parseInt(classe5_piscofins) + parseInt(classe5_outros) + parseInt(classe5_clt);
-
-            if (ramo == "classe5");
-            var aliq_total =  parseInt(classe5_total_real) / parseInt(fat_12m);
-
-
-            }
-
-
-           
-            function opcao_trib(){
- if(document.getElementById("trib_atual").value == ""){
- alert("Selecione uma opção");
- }
- if(document.getElementById("trib_atual").value == "1a")
- {
- calculo_simples();
- }
- }
- if(document.getElementById("trib_atual").value == "1b" && ((document.getElementById("ramo") == "at_imob") || (document.getElementById("ramo") == "com") || (document.getElementById("ramo") == "ind_terc") || (document.getElementById("ramo") == "transp_cargo"))); {classe1_calculolp()};
-
- else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolp()};
-    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "rev_comb")); {classe3_calculolp()};
-    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "serv_hosp")); {classe4_calculolp()};
-    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "transp")); {classe5_calculolp()};
- }
-
- }
- }
- if(document.getElementById("trib_atual").value == "1c") && ((document.getElementById("ramo") == "at_imob") || (document.getElementById("ramo") == "com") || (document.getElementById("ramo") == "ind_terc") || (document.getElementById("ramo") == "transp_cargo")); {classe1_calculolr()};
-
-    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolr()};
-    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "rev_comb")); {classe3_calculolr()};
-    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "serv_hosp")); {classe4_calculolr()};
-    else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "transp")); {classe5_calculolr()};
- }
-
-
- function sera_que_ta_bom(){
-    if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) < parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) < parseInt(aliq_real)) 
-        || (opcao_trib == "1b" && ((parseInt(aliq_presumido) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) < parseInt(aliq_real)) )) 
-        || (opcao_trib == "1c" && ((parseInt(aliq_real) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) < parseInt(aliq_presumido)) ) ))); {
-    var resultado = "otimo"; 
-
-    } else if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) > parseInt(aliq_real)) 
-        || (opcao_trib == "1b" && ((parseInt(aliq_presumido) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) > parseInt(aliq_real)) )) 
-        || (opcao_trib == "1c" && ((parseInt(aliq_real) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) > parseInt(aliq_presumido)) ) ))); {
-    var resultado = "pessimo";
-    } else var resultado = "meh";
 }
- 
- }
-    function resultado_final(){
-        if (resultado == "otimo");{
-        var resultado_final = "Está tudo certo: os números indicam que a empresa está recolhendo tributos de acordo com a média das empresas do setor.";
-        } else if (resultado == "meh"); {
-        var resultado_final = "Ajustes são necessários: é possível que a empresa esteja recolhendo um pouco mais de tributos.";
-        } else if (resultado == "pessimo") {;
-        var resultado_final = "Atenção: tudo indica que a empresa esteja pagando muito mais tributos que outras empresas do setor. Entre em contato com a gente.";
 
-        document.getElementById('resultado_final').value = resultado_final;
 
-    }
-            
-            
+
+    </style>
+
+
+
+
+
+    <script type="text/javascript">
             
 
-        </script>
-
-    </header>
-    <body>
-
-            <p id="one"></p>
-
-        <h1>Calculadora de tributos</h1>
-
-            <form id="form">
-                Nome: <input id="nome" type="text" size="15"/> <br/>
-                WhatsApp: <input id="whatsapp" type="text" size="15"/> <br/><br/>
-                CNPJ: <input id="cnpj" type="text" size="15"/> <br/>
-                CNAE: <input id="cnae" type="text" size="15"/> <br/><br/>
                 
-                Tributação atual: <select id="trib_atual" onblur="opcao_trib()">
-                <option id="valor" value=""> </option>
-                <option id="valor" value="1a">Simples Nacional</option>
-                <option id="valor" value="1b">Lucro Presumido</option>
-                <option id="valor" value="1c">Lucro Real</option>
-                </select> <br/>
-               
-                Anexo Simples Nacional: <select id="cat_simples" onblur="opcao_simples()">
-                <option id="valor" value=""> </option>
-                <option id="valor" value="i">I</option>
-                <option id="valor" value="ii">II</option>
-                <option id="valor" value="iii">III</option>
-                <option id="valor" value="iv">IV</option>
-                <option id="valor" value="v">V</option>
-                </select> <br/>
-                
-                Ramo de atividade: <select id="ramo" onblur="opcao_ramo()">
-                <option id="valor" value=""> </option>
-                <option id="valor" value="at_imob">Atividades imobiliárias</option>
-                <option id="valor" value="com">Comércio</option>
-                <option id="valor" value="ind_terc">Indústria para terceiros</option>
-                <option id="valor" value="prest_serv">Prestação de serviços</option>
-                <option id="valor" value="rev_comb">Revenda de combustíveis e gás natural</option>
-                <option id="valor" value="serv_hosp">Serviços hospitalares</option>
-                <option id="valor" value="transp">Transporte (exceto cargas)</option>
-                <option id="valor" value="transp_cargo">Transporte de cargas</option>
-                </select> <br/> <br/>
-                
-                Faturamento do mês: <input id="fat_mensal" type="text" size="15"/> <br/><br/>
-               
-                Custos com mercadorias/serviços prestados: <input id="custos_merc" type="text" size="15"/> <br/>
-               
-               
-                Despesas gerais: <input id="custos_adm" type="text" size="15"/> <br/>
-                Folha mensal (CLT): <input id="custos_clt" type="text" size="15"/> <br/>
-                Despesas com marketing: <input id="custos_mkt" type="text" size="15"/> <br/>
-                <br/>
-                
-                
-            
-                <input id="calcular" type="button" value="Calcular" onclick="resultado_final()"/>
-                <input id="limpar" type="reset" value="Resetar"/> <br/> <br/>
-                
-                Resultado: <input id="resultado_final" type="text" size="15" disabled="true"/>
+                function resultado_final_1(){
+                  var trib_atual = document.getElementById("trib_atual");
+                  var anexo_simples = document.getElementById("anexo_simples");
+                  var ramo = document.getElementById("ramo");
 
-         </form>
+                  var fat_mensal = document.getElementById("fat_mensal").value;
+                  var fat_12m = ("fat_12m"*12);
+
+                  var custos_merc = document.getElementById("custos_merc").value;
+                  var custos_adm = document.getElementById("custos_adm").value;
+                  var custos_clt = document.getElementById("custos_clt").value;
+                  var custos_mkt = document.getElementById("custos_mkt").value;
+                  var custos_mensais = parseInt(custos_merc) + parseInt(custos_adm) + parseInt(custos_clt) + parseInt(custos_mkt);
+
+                  var lucro_liquido = parseInt(fat_mensal) - parseInt(custos_mensais);
+                  var lucro_real = parseInt(lucro_liquido) * 12;
 
 
-    </body>
+                  var c1_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe1_outros)) / 12;
+                  var c2_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe2_outros)) / 12;
+                  var c3_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe3_outros)) / 12;
+                  var c4_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe4_outros)) / 12;
+                  var c5_tributos = (parseInt(classe1_clt) + parseInt(classe1_piscofins) + parseInt(classe5_outros)) / 12;
+
+
+                  function calculo_ir(){   if (lucro_presumido > 240000) {     var ir = parseInt(lucro_presumido) * 0.15 + (parseInt(lucro_presumido) - 240000) * 0.1;   }   else {     var ir = parseInt(lucro_presumido) * 0.15;   }  }
+
+
+                  //tem que arrumar, é isso =IF(((LR*0,15)+ IF(LR>240000; (LR-240000)*0,1;0)) +LR*0,09<0; 0; ((LR*0,15)+IF(LR>240000; (LR-240000)*0,1;0))+LR*0,09)
+
+
+                  function calculo_ircs(){
+                  if (lucro_real > 240000)
+                      {var lucro_real = parseInt(lucro_real) - 240000 * 0.1}
+                      else {var lucro_real = 0};
+
+                  var ircs = 2;
+                  }
+
+
+
+                  function calculo_piscofins(){
+                  if ((((parseInt(fat_mensal) * 0.0925)) - ((parseInt(custos_merc) - parseInt(custos_mkt)) * 0.0925) * 12)) < 0; { var piscofins = 0;} 
+                  else { var piscofins = (((parseInt(fat_mensal) * 0.0925)) - (parseInt(custos_merc) - parseInt(custos_mkt)) * 0.0925) * 12};
+                  }
+
+
+
+                  //simples nacional
+
+                  function calculo_aliquota_parc_faixa_1(){
+                  if (cat_simples == "i") {
+                      var limite_faixa1 = "180000";
+                      var aliquota_faixa = 0.004;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "ii") {
+                      var limite_faixa1 = "180000";
+                      var aliquota_faixa = 0.045;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "iii") {
+                      var limite_faixa1 = "180000";
+                      var aliquota_faixa = 0.06;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "iv") {
+                      var limite_faixa1 = "4800000";
+                      var aliquota_faixa = 0.3;
+                      var parc_ded = "72000";
+                      } else if (cat_simples == "v") {
+                      var limite_faixa1 = "180000";
+                      var aliquota_faixa = 0.155;
+                      var parc_ded = "0";
+                  }}
+
+                 function calculo_aliquota_parc_faixa_2(){
+                  if (cat_simples == "i") {
+                      var limite_faixa2 = "360000";
+                      var aliquota_faixa = 0.073;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "ii") {
+                      var limite_faixa2 = "360000";
+                      var aliquota_faixa = 0.078;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "iii") {
+                      var limite_faixa2 = "360000";
+                      var aliquota_faixa = 0.112;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "iv") {
+                      var limite_faixa2 = "180000";
+                      var aliquota_faixa = 0.045;
+                      var parc_ded = "72000";
+                      } else if (cat_simples == "v") {
+                      var limite_faixa2 = "360000";
+                      var aliquota_faixa = 0.18;
+                      var parc_ded = "0";
+                  }}
+
+
+                  function calculo_aliquota_parc_faixa_3(){
+                  if (cat_simples == "i") {
+                      var limite_faixa3 = "720000";
+                      var aliquota_faixa = 0.073;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "ii") {
+                      var limite_faixa3 = "720000";
+                      var aliquota_faixa = 0.078;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "iii") {
+                      var limite_faixa3 = "720000";
+                      var aliquota_faixa = 0.112;
+                      var parc_ded = "0";
+                      } else if (cat_simples == "iv") {
+                      var limite_faixa3 = "360000";
+                      var aliquota_faixa = 0.045;
+                      var parc_ded = "72000";
+                      } else if (cat_simples == "v") {
+                      var limite_faixa3 = "720000";
+                      var aliquota_faixa = 0.18;
+                      var parc_ded = "0";
+                  }}
+
+                  function calculo_aliquota_parc_faixa_4(){
+                  if (cat_simples == "i") {
+                      var limite_faixa4 = "1800000";
+                      var aliquota_faixa = 0.107;
+                      var parc_ded = "22500";
+                      } else if (cat_simples == "ii") {
+                      var limite_faixa4 = "1800000";
+                      var aliquota_faixa = 0.112;
+                      var parc_ded = "22500";
+                      } else if (cat_simples == "iii") {
+                      var limite_faixa4 = "1800000";
+                      var aliquota_faixa = 0.16;
+                      var parc_ded = "35640";
+                      } else if (cat_simples == "iv") {
+                      var limite_faixa4 = "720000";
+                      var aliquota_faixa = 0.102;
+                      var parc_ded = "12420";
+                      } else if (cat_simples == "v") {
+                      var limite_faixa4 = "1800000";
+                      var aliquota_faixa = 0.205;
+                      var parc_ded = "17100";
+                  }}
+
+                  function calculo_aliquota_parc_faixa_5(){
+                  if (cat_simples == "i") {
+                      var limite_faixa5 = "3600000";
+                      var aliquota_faixa = 0.143;
+                      var parc_ded = "87300";
+                      } else if (cat_simples == "ii") {
+                      var limite_faixa5 = "3600000";
+                      var aliquota_faixa = 0.147;
+                      var parc_ded = "125640";
+                      } else if (cat_simples == "iii") {
+                      var limite_faixa5 = "3600000";
+                      var aliquota_faixa = 0.21;
+                      var parc_ded = "35640";
+                      } else if (cat_simples == "iv") {
+                      var limite_faixa5 = "1800000";
+                      var aliquota_faixa = 0.14;
+                      var parc_ded = "39780";
+                      } else if (cat_simples == "v") {
+                      var limite_faixa5 = "3600000";
+                      var aliquota_faixa = 0.23;
+                      var parc_ded = "62100";
+                  }}
+
+                  function calculo_aliquota_parc_faixa_6(){
+                  if (cat_simples == "i") {
+                      var limite_faixa5 = "4800000";
+                      var aliquota_faixa = 0.19;
+                      var parc_ded = "378000";
+                      } else if (cat_simples == "ii") {
+                      var limite_faixa5 = "4800000";
+                      var aliquota_faixa = 0.3;
+                      var parc_ded = "720000";
+                      } else if (cat_simples == "iii") {
+                      var limite_faixa5 = "4800000";
+                      var aliquota_faixa = 0.33;
+                      var parc_ded = "648000";
+                      } else if (cat_simples == "iv") {
+                      var limite_faixa5 = "3600000";
+                      var aliquota_faixa = 0.22;
+                      var parc_ded = "183780";
+                      } else if (cat_simples == "v") {
+                      var limite_faixa5 = "4800000";
+                      var aliquota_faixa = 0.305;
+                      var parc_ded = "540000";
+                  }}
+
+
+                 function calculo_faixa(){
+                  if (parseInt(fat_12m) <= parseInt(limite_faixa1)) {
+                      var faixa_simples = "faixa1";
+                      else if (parseInt(fat_12m) <= parseInt(limite_faixa2)) {
+                      var faixa_simples = "faixa2";
+                      else if (parseInt(fat_12m) <= parseInt(limite_faixa3)) {
+                      var faixa_simples = "faixa3";
+                      else if (parseInt(fat_12m) <= parseInt(limite_faixa5)) {
+                      var faixa_simples = "faixa4";
+                      else if (parseInt(fat_12m) <= parseInt(limite_faixa5)) {
+                      var faixa_simples = "faixa5";
+                      else if (parseInt(fat_12m) >= parseInt(limite_faixa6)) {
+                      var faixa_simples = "faixa6 ";
+                  }}}}}}}
+
+
+                  function calculo_simples_nacional(){
+                      var aliquota_simples_nacional = (parseInt(fat12m) * (parseInt(aliquota_faixa) - parseInt(parc_ded)) / parseInt(fat12m));
+
+                  }
+
+
+                  //lucro presumido
+
+                  function define_lp(){
+                      if (ramo) == ("at_imob" || "com" || "ind_terc" || "transp_cargo");
+                      var classe = "classe1";
+                      else if (ramo) == ("prest_serv");
+                      var classe = "classe2";
+                      else if (ramo) == ("rev_comb");
+                      var classe = "classe3";
+                      else if (ramo) == ("serv_hosp");
+                      var classe = "classe4";
+                      else if (ramo) == ("transp");
+                      var classe = "classe5";
+                  }
+
+
+                  }
+
+                 function classe1_calculolp(){
+                  var c1asse1_lucro_presumido = 0.08 * parseInt(fat_12m);
+                  var classe1_ir = calculo_ir();
+                  var classe1_lucro_presumido_csll = 0.08 * parseInt(fat_12m);
+                  var classe1_unk = parseInt(classe1_lucro_presumido_csll) * 0.09;
+                  var classe1_outros = parseInt(fat_12m) * (0.18 + 0.0365);
+                  var classe1_clt = parseInt(custos_clt) * 12 * 0.358;
+                  var classe1_total_presumido = parseInt(classe1_ir) + parseInt(classe1_unk) + parseInt(classe1_outros) + parseInt(classe1_clt);
+
+                  if (ramo == "classe1");
+                  var aliq_presumido = parseInt(classe1_total_presumido) / parseInt(fat_12m);
+                }
+
+                  function classe2_calculolp(){
+                  var c1asse2_lucro_presumido = 0.32 * parseInt(fat_12m);
+                  var classe2_ir = calculo_ir();
+                  var classe2_lucro_presumido_csll = 0.32 * parseInt(fat_12m);
+                  var classe2_unk = parseInt(classe2_lucro_presumido_csll) * 0.09;
+                  var classe2_outros = parseInt(fat_12m) * (0.05 + 0.0365);
+                  var classe2_clt = parseInt(custos_clt) * 12 * 0.358;
+                  var classe2_total_presumido = parseInt(classe2_ir) + parseInt(classe2_unk) + parseInt(classe2_outros) + parseInt(classe2_clt);
+
+                  if (ramo == "classe2");
+                  var aliq_presumido = parseInt(classe2_total_presumido) / parseInt(fat_12m);
+                  }
+
+                  function classe3_calculolp(){
+                  var c1asse3_lucro_presumido = 0.016 * parseInt(fat_12m);
+                  var classe3_ir = calculo_ir();
+                  var classe3_lucro_presumido_csll = 0.016 * parseInt(fat_12m);
+                  var classe3_unk = parseInt(classe3_lucro_presumido_csll) * 0.09;
+                  var classe3_outros = 0;
+                  var classe3_clt = parseInt(custos_clt) * 12 * 0.358;
+                  var classe3_total_presumido = parseInt(classe3_ir) + parseInt(classe3_unk) + parseInt(classe3_outros) + parseInt(classe3_clt);
+
+                  if (ramo == "classe3");
+                  var aliq_presumido = parseInt(classe3_total_presumido) / parseInt(fat_12m);
+                  }
+
+                  function classe4_calculolp(){
+                  var c1asse4_lucro_presumido = 0.08 * parseInt(fat_12m);
+                  var classe4_ir = calculo_ir();
+                  var classe4_lucro_presumido_csll = 0.12 * parseInt(fat_12m);
+                  var classe4_unk = parseInt(classe4_lucro_presumido_csll) * 0.09;
+                  var classe4_outros = parseInt(fat_12m) * (0.05 + 0.0365);
+                  var classe4_clt = parseInt(custos_clt) * 12 * 0.358;
+                  var classe4_total_presumido = parseInt(classe4_ir) + parseInt(classe4_unk) + parseInt(classe4_outros) + parseInt(classe4_clt);
+
+                  if (ramo == "classe4");
+                  var aliq_presumido = parseInt(classe4_total_presumido) / parseInt(fat_12m);
+                  }
+
+                  function classe5_calculolp(){
+                  var c1asse5_lucro_presumido = 0.16 * parseInt(fat_12m);
+                  var classe5_ir = calculo_ir();
+                  var classe5_lucro_presumido_csll = 0.16 * parseInt(fat_12m);
+                  var classe5_unk = parseInt(classe5_lucro_presumido_csll) * 0.09;
+                  var classe5_outros = parseInt(fat_12m) * (0.18 + 0.0365);
+                  var classe5_clt = parseInt(custos_clt) * 12 * 0.358;
+                  var classe5_total_presumido = parseInt(classe5_ir) + parseInt(classe5_unk) + parseInt(classe5_outros) + parseInt(classe5_clt);
+
+                  if (ramo == "classe5");
+                  var aliq_presumido = parseInt(classe5_total_presumido) / parseInt(fat_12m);
+                  }
+
+
+                  //lucro real
+
+
+
+                  function classe1_calculolr(){
+                  var c1asse1_lucro_real = parseInt(lucro_liquido) * 12;
+                  var classe1_ircs = ircs;
+                  var classe1_piscofins = piscofins;
+                  var classe1_outros = parseInt(fat_12m) * 0.18;
+                  var classe1_total_real = parseInt(classe1_ircs) + parseInt(classe1_piscofins) + parseInt(classe1_outros) + parseInt(classe1_clt);
+
+                  if (ramo == "classe5");
+                  var aliq_total =  parseInt(classe1_total_real) / parseInt(fat_12m);
+
+
+                  }
+
+                  function classe2_calculolr(){
+                  var c1asse2_lucro_real = parseInt(lucro_liquido) * 12;
+                  var classe2_ircs = ircs;
+                  var classe2_piscofins = piscofins;
+                  var classe2_outros = parseInt(fat_12m) * 0.5;
+                  var classe2_total_real = parseInt(classe2_ircs) + parseInt(classe2_piscofins) + parseInt(classe2_outros) + parseInt(classe2_clt);
+
+                  if (ramo == "classe2");
+                  var aliq_total =  parseInt(classe2_total_real) / parseInt(fat_12m);
+
+
+                  }
+                  function classe3_calculolr(){
+                  var c1asse3_lucro_real = parseInt(lucro_liquido) * 12;
+                  var classe3_ircs = ircs;
+                  var classe3_piscofins = piscofins;
+                  var classe3_outros = parseInt(fat_12m) * 0;
+                  var classe3_total_real = parseInt(classe3_ircs) + parseInt(classe3_piscofins) + parseInt(classe3_outros) + parseInt(classe3_clt);
+
+                  if (ramo == "classe3");
+                  var aliq_total =  parseInt(classe3_total_real) / parseInt(fat_12m);
+
+
+                  } function classe4_calculolr(){
+                  var c1asse4_lucro_real = parseInt(lucro_liquido) * 12;
+                  var classe4_ircs = ircs;
+                  var classe4_piscofins = piscofins;
+                  var classe4_outros = parseInt(fat_12m) * 0.05;
+                  var classe4_total_real = parseInt(classe4_ircs) + parseInt(classe4_piscofins) + parseInt(classe4_outros) + parseInt(classe4_clt);
+
+                  if (ramo == "classe4");
+                  var aliq_total =  parseInt(classe4_total_real) / parseInt(fat_12m);
+
+
+
+                  } function classe5_calculolr(){
+                  var c1asse5_lucro_real = parseInt(lucro_liquido) * 12;
+                  var classe5_ircs = ircs;
+                  var classe5_piscofins = piscofins;
+                  var classe5_outros = parseInt(fat_12m) * 0.18;
+                  var classe5_total_real = parseInt(classe5_ircs) + parseInt(classe5_piscofins) + parseInt(classe5_outros) + parseInt(classe5_clt);
+
+                  if (ramo == "classe5");
+                  var aliq_total =  parseInt(classe5_total_real) / parseInt(fat_12m);
+
+
+                  }
+
+
+
+                  function opcao_trib(){
+       if (document.getElementById("trib_atual").value == ""){
+       alert("Selecione sua tributação atual");
+       }
+       if (document.getElementById("trib_atual").value == "1a")
+       { calculo_simples();}
+       else if (document.getElementById("trib_atual").value == "1b")
+
+       }
+       
+       if(document.getElementById("trib_atual").value == "1b" && ((document.getElementById("ramo") == "at_imob") || (document.getElementById("ramo") == "com") || (document.getElementById("ramo") == "ind_terc") || (document.getElementById("ramo") == "transp_cargo"))); {classe1_calculolp()};
+
+       else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolp()};
+          else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "rev_comb")); {classe3_calculolp()};
+          else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "serv_hosp")); {classe4_calculolp()};
+          else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "transp")); {classe5_calculolp()};
+       }
+
+       }
+       }
+       if(document.getElementById("trib_atual").value == "1c") && ((document.getElementById("ramo") == "at_imob") || (document.getElementById("ramo") == "com") || (document.getElementById("ramo") == "ind_terc") || (document.getElementById("ramo") == "transp_cargo")); {classe1_calculolr()};
+
+          else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "prest_serv")); {classe2_calculolr()};
+          else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "rev_comb")); {classe3_calculolr()};
+          else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "serv_hosp")); {classe4_calculolr()};
+          else if (document.getElementById("trib_atual").value == "1b" && (document.getElementById("ramo") == "transp")); {classe5_calculolr()};
+       }
+
+
+       function sera_que_ta_bom(){
+          if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) < parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) < parseInt(aliq_real))
+              || (opcao_trib == "1b" && ((parseInt(aliq_presumido) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) < parseInt(aliq_real)) ))
+              || (opcao_trib == "1c" && ((parseInt(aliq_real) < parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) < parseInt(aliq_presumido)) ) ))); {
+          var resultado = "otimo";
+
+          } else if (opcao_trib == "1a" && ((parseInt(aliquota_simples_nacional) > parseInt(aliq_presumido)) && (parseInt(aliquota_simples_nacional) > parseInt(aliq_real))
+              || (opcao_trib == "1b" && ((parseInt(aliq_presumido) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_presumido) > parseInt(aliq_real)) ))
+              || (opcao_trib == "1c" && ((parseInt(aliq_real) > parseInt(aliquota_simples_nacional)) && (parseInt(aliq_real) > parseInt(aliq_presumido)) ) ))); {
+          var resultado = "pessimo";
+          } else var resultado = "meh";
+      }
+
+       }
+          function resultado_final(){
+              if (resultado == "otimo");{
+              var resultado_final = "Está tudo certo: os números indicam que a empresa está recolhendo tributos de acordo com a média das empresas do setor.";
+              } else if (resultado == "meh"); {
+              var resultado_final = "Ajustes são necessários: é possível que a empresa esteja recolhendo um pouco mais de tributos.";
+              } else if (resultado == "pessimo") {;
+              var resultado_final = "Atenção: tudo indica que a empresa esteja pagando muito mais tributos que outras empresas do setor. Entre em contato com a gente.";
+
+              document.getElementById('resultado_final').value = resultado_final;
+
+          }
+        }
+    </script>
+  </header>
+  <body>
+    <img src="LOGOWhite.png"></img> 
+
+    <h1>Sua empresa paga mais impostos do que deveria?</h1>
+
+    <form id="form">
+      <p style="position: absolute;
+      width: 38px;
+      height: 15px;
+      left: 421px;
+      top: 245px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      
+      color: #FFFFFF;"">Nome: </p><input id="nome" type="text" size="15" style="position: absolute;
+      width: 149px;
+      height: 20px;
+      left: 474px;
+      top: 240px;
+      
+      background: #F4F4F4;
+      border-radius: 5px;"/> <br />
+      WhatsApp: <input id="whatsapp" type="number" size="15" style="position: absolute;
+      width: 149px;
+      height: 20px;
+      left: 474px;
+      top: 268px;
+      
+      background: #F4F4F4;
+      border-radius: 5px;"/> <br /><br />
+      CNPJ: <input id="cnpj" type="number" size="15" /> <br />
+      CNAE: <input id="cnae" type="number" size="15" /> <br /><br />
+
+      Tributação atual:
+      <select id="trib_atual" onblur="opcao_trib()">
+        <option id="valor" value=""></option>
+        <option id="valor" value="1a">Simples Nacional</option>
+        <option id="valor" value="1b">Lucro Presumido</option>
+        <option id="valor" value="1c">Lucro Real</option>
+      </select>
+      <br />
+
+      Anexo Simples Nacional:
+      <select id="cat_simples" onblur="opcao_simples()">
+        <option id="valor" value=""></option>
+        <option id="valor" value="i">I</option>
+        <option id="valor" value="ii">II</option>
+        <option id="valor" value="iii">III</option>
+        <option id="valor" value="iv">IV</option>
+        <option id="valor" value="v">V</option>
+      </select>
+      <br />
+
+      Ramo de atividade:
+      <select id="ramo" onblur="opcao_ramo()">
+        <option id="valor" value=""></option>
+        <option id="valor" value="at_imob">Atividades imobiliárias</option>
+        <option id="valor" value="com">Comércio</option>
+        <option id="valor" value="ind_terc">Indústria para terceiros</option>
+        <option id="valor" value="prest_serv">Prestação de serviços</option>
+        <option id="valor" value="rev_comb">
+          Revenda de combustíveis e gás natural
+        </option>
+        <option id="valor" value="serv_hosp">Serviços hospitalares</option>
+        <option id="valor" value="transp">Transporte (exceto cargas)</option>
+        <option id="valor" value="transp_cargo">Transporte de cargas</option>
+      </select>
+      <br />
+      <br />
+
+      Faturamento do mês: <input id="fat_mensal" type="text" size="15" />
+      <br /><br />
+
+      Custos com mercadorias/serviços prestados:
+      <input id="custos_merc" type="number" size="15" /> <br />
+
+      Despesas gerais: <input id="custos_adm" type="number" size="15" /> <br />
+      Folha mensal (CLT): <input id="custos_clt" type="number" size="15" /> <br />
+      Despesas com marketing: <input id="custos_mkt" type="number" size="15" />
+      <br />
+      <br />
+
+      <input
+        id="calcular"
+        type="button"
+        value="Calcular"
+        onclick="resultado_final_1()"
+      />
+      <input id="limpar" type="reset" value="Resetar" /> <br />
+      <br />
+
+      Resultado:
+      <input id="resultado_final" type="text" size="15" disabled="true" />
+    </form>
+  </body>
 </html>
