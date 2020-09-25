@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+  <header>
+    <script type="text/javascript" src='program.js'></script>
+  </header>
+  <body style="background-color: #00000c">
+    <img src="LOGOWhite.png" style="position: absolute;
+    width: 251px;
+    height: 93px;
+    left: 500px;
+    top: 46px;"></img> 
+
+    <h1 style="position: absolute;
+    width: 613px;
+    height: 31px;
+    left: 314px;
+    top: 163px;
+    
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 31px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #FFFFFF;">Sua empresa paga mais impostos do que deveria?</h1>
+
+    <form id="form">
+      <p style="position: absolute;
+      width: 38px;
+      height: 15px;
+      left: 421px;
+      top: 235px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      
+      color: #FFFFFF;">Nome*: </p><input id="nome" type="text" size="15" style="position: absolute;
+      width: 149px;
+      height: 20px;
+      left: 474px;
+      top: 240px;
+      
+      background: #F4F4F4;
+      border-radius: 5px;"/> <br />
+      <p style="position: absolute;
+      width: 64px;
+      height: 15px;
+      left: 395px;
+      top: 263px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      
+      color: #FFFFFF;
+      ">WhatsApp*: </p><input id="whatsapp" type="text" size="15" style="position: absolute;
+      width: 149px;
+      height: 20px;
+      left: 474px;
+      top: 268px;
+      background: #F4F4F4;
+      border-radius: 5px;"/> <br /><br />
+<p style="position: absolute;
+width: 33px;
+height: 15px;
+left: 426px;
+top: 291px;
+
+font-family: SF Pro Text;
+font-style: normal;
+font-weight: 300;
+font-size: 13px;
+line-height: 16px;
+text-align: center;
+
+color: #FFFFFF;
+">Email*: </p><input id="email" type="text" size="15" style="position: absolute;
+width: 149px;
+height: 20px;
+left: 474px;
+top: 296px;
+background: #F4F4F4;
+border-radius: 5px;"/> <br /><br />
+
+      <p style="position: absolute;
+      width: 34px;
+      height: 15px;
+      left: 646px;
+      top: 235px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;">CNPJ*: </p><input id="cnpj" type="text" size="15" style="position: absolute;
+width: 149px;
+height: 20px;
+left: 695px;
+top: 240px;
+
+background: #F4F4F4;
+border-radius: 5px;"/> <br />
+      <p style="position: absolute;
+      width: 36px;
+      height: 15px;
+      left: 644px;
+      top: 263px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      
+      color: #FFFFFF;">CNAE*: </p><input id="cnae" type="text" style="position: absolute;
+width: 149px;
+height: 20px;
+left: 695px;
+top: 268px;
+
+background: #F4F4F4;
+border-radius: 5px;" size="15" /> <br /><br />
+
+      <p style="position: absolute;
+      width: 99px;
+      height: 16px;
+      left: 581px;
+      top: 359px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;">Tributação atual: </p>
+      <select style="position: absolute;
+      width: 149px;
+      height: 21px;
+      left: 695px;
+      top: 366px;
+      
+      background: #F4F4F4;
+      border-radius: 5px;" id="trib_atual" onblur="">
+        <option id="valor" value=""></option>
+        <option id="valor" value="1a">Simples Nacional</option>
+        <option id="valor" value="1b">Lucro Presumido</option>
+        <option id="valor" value="1c">Lucro Real</option>
+      </select>
+      <br />
+
+      <p style="position: absolute;
+      width: 167px;
+      height: 16px;
+      left: 523px;
+      top: 387px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;
+      ">Anexo Simples Nacional: </p>
+      <select id="cat_simples" style="position: absolute;
+      width: 149px;
+      height: 21px;
+      left: 695px;
+      top: 394px;
+      
+      background: #F4F4F4;
+      border-radius: 5px;" onblur="">
+        <option id="valor" value=""></option>
+        <option id="valor" value="i">I</option>
+        <option id="valor" value="ii">II</option>
+        <option id="valor" value="iii">III</option>
+        <option id="valor" value="iv">IV</option>
+        <option id="valor" value="v">V</option>
+      </select>
+      <br />
+
+      <p style="position: absolute;
+      width: 114px;
+      height: 16px;
+      left: 566px;
+      top: 415px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;">Ramo de atividade: </p>
+      <select id="ramo" style="position: absolute;
+      width: 149px;
+      height: 21px;
+      left: 695px;
+      top: 422px;
+      
+      background: #F4F4F4;
+      border-radius: 5px;" onblur="">
+        <option id="valor" value=""></option>
+        <option id="valor" value="at_imob">Atividades imobiliárias</option>
+        <option id="valor" value="com">Comércio</option>
+        <option id="valor" value="ind_terc">Indústria para terceiros</option>
+        <option id="valor" value="prest_serv">Prestação de serviços</option>
+        <option id="valor" value="rev_comb">
+          Revenda de combustíveis e gás natural
+        </option>
+        <option id="valor" value="serv_hosp">Serviços hospitalares</option>
+        <option id="valor" value="transp">Transporte (exceto cargas)</option>
+        <option id="valor" value="transp_cargo">Transporte de cargas</option>
+      </select>
+      <br />
+      <br />
+
+      <p style="position: absolute;
+      width: 125px;
+      height: 16px;
+      left: 555px;
+      top: 477px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;
+      ">Faturamento mensal: </p><input id="fat_mensal" type="text" style="position: absolute;
+width: 149px;
+height: 21px;
+left: 695px;
+top: 482px;
+
+background: #F4F4F4;
+border-radius: 5px;" size="15" />
+      <br /><br />
+
+      <p style="position: absolute;
+      width: 274px;
+      height: 16px;
+      left: 408px;
+      top: 505px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;
+      ">Custos com mercadorias/serviços prestados: </p>
+      <input id="custos_merc" type="text" style="position: absolute;
+      width: 149px;
+      height: 21px;
+      left: 695px;
+      top: 510px;
+      
+      background: #F4F4F4;
+      border-radius: 5px;" size="15" /> <br />
+
+      <p style="position: absolute;
+      width: 269px;
+      height: 16px;
+      left: 493px;
+      top: 533px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;">Despesas gerais: </p><input id="custos_adm" type="text" style="position: absolute;
+width: 149px;
+height: 21px;
+left: 695px;
+top: 538px;
+
+background: #F4F4F4;
+border-radius: 5px;" size="15" /> <br />
+      <p style="position: absolute;
+      width: 156px;
+      height: 16px;
+      left: 542px;
+      top: 561px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;">Folha mensal (CLT): </p><input id="custos_clt" type="text" style="position: absolute;
+width: 149px;
+height: 21px;
+left: 695px;
+top: 566px;
+
+background: #F4F4F4;
+border-radius: 5px;" size="15" /> <br />
+      <p style="position: absolute;
+      width: 168px;
+      height: 16px;
+      left: 519px;
+      top: 589px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;
+      ">Despesas com marketing: </p><input id="custos_mkt" type="text" style="position: absolute;
+width: 149px;
+height: 21px;
+left: 695px;
+top: 594px;
+
+background: #F4F4F4;
+border-radius: 5px;" size="15" />
+      <br />
+      <br />
+
+      <input
+        id="calcular"
+        type="button"
+        value="Calcular" style="position: absolute;
+        
+        width: 106px;
+        height: 33px;
+        left: 567px;
+        top: 636px;
+        
+        font-family: SF Pro Text;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #0cOc0c; "
+
+
+        onclick="sera_que_ta_bom()"
+      />
+
+      <input
+        id="contato"
+        type="button"
+        value="Calcular" style="position: absolute;
+        
+        width: 106px;
+        height: 33px;
+        left: 567px;
+        top: 636px;
+        
+        font-family: SF Pro Text;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #0cOc0c; "
+
+
+        onclick="sera_que_ta_bom()"
+      />
+      
+      <br />
+
+    
+      <input id="resultado_final" type="text" size="15" style="position: absolute;
+      width: 700px;
+      height: 27px;
+      left: 280px;
+      top: 694px;
+      
+      font-family: SF Pro Text;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 16px;
+      /* identical to box height */
+      
+      text-align: center;
+      
+      color: #FFFFFF;" disabled="true"/> 
+    </form>
+  </body>
+</html>
